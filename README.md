@@ -1,6 +1,14 @@
 # Game_Deep
-<h1> About the Game</h1>
+<ul>
+  <li> Sobre o que é o jogo</li>
+  <li> Como o jogo funciona</li>
+  <li> Cenarios </li>
+</ul>
+<h1> Sobre o que é o jogo </h1>
 <p> O jogo vai ser constituído de três fases e tem como objetivo  que o jogador passe por obstaculos cada vez mais dificeis de cada nível. </p>
+
+<h1> Como o jogo funciona </h1>
+<p> Ele usará comandos normais para movimentação do personagem.</p>
 
 
 
