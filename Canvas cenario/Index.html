@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cenário Canvas</title>
+    <link rel="icon" type="image/png" href="image/Montanhas.png">
+</head>
+<body bgcolor="#262222" style="text-align: center;">
+    <h1>Cenário Canvas</h1>
+    <canvas id="Canvas" width="900" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById("Canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Manhã
+        ctx.fillStyle = "#87CEEB"; // Céu azul claro
+        ctx.fillRect(0, 0, canvas.width / 3, canvas.height);
+
+        // Sol
+        ctx.fillStyle = "#FFD700"; // Cor do sol
+        ctx.beginPath();
+        ctx.arc(55, 60, 50, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        // Nuvens
+        drawCloud(250, 150);
+        drawCloud(10, 200);
+        drawCloud(50, 100);
+
+        function drawCloud(x, y) {
+            ctx.fillStyle = "#fff"; // Cor das nuvens
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, Math.PI * 2);
+            ctx.arc(x + 40, y, 40, 0, Math.PI * 2);
+            ctx.arc(x + 80, y, 30, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        // Tarde
+        ctx.fillStyle = "#FFA500"; // Céu alaranja
+        ctx.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
+
+        // Sol Manhã
+        ctx.fillStyle = "#FFD700"; // Cor do sol
+        ctx.beginPath();
+        ctx.arc(520, 350, 50, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        // Noite
+        ctx.fillStyle = "#000"; // Céu noturno
+        ctx.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+        
+        // Lua
+        ctx.fillStyle = "#f5f5f5"; // Cor da lua
+        ctx.beginPath();
+        ctx.arc(800, 100, 50, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        // Estrelas
+        ctx.fillStyle = "#fff"; // Cor das estrelas
+        for (let i = 0; i < 100; i++) {
+            const x = (canvas.width / 3) * 2 + Math.random() * (canvas.width / 3);
+            const y = Math.random() * canvas.height;
+            ctx.fillRect(x, y, 2, 2);
+        }
+    </script>
+</body>
+</html>
+
