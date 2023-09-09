@@ -1,0 +1,14 @@
+#CanvasM, #CanvasT, #CanvasN {
+            display: inline-block;
+            vertical-align: top;
+}
+
+#CanvasM {
+    border-top-left-radius: 30px; /* Canto superior esquerdo arredondado */
+    border-bottom-left-radius: 30px; /* Canto inferior esquerdo arredondado */
+}
+
+#CanvasN {
+    border-top-right-radius: 30px; /* Canto superior direito arredondado */
+    border-bottom-right-radius: 30px; /* Canto inferior direito arredondado */
+}
