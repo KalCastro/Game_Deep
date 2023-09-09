@@ -7,187 +7,251 @@
 </head>
 <body bgcolor="#262222" style="text-align: center;">
     <h1>Cenário Canvas</h1>
-    <canvas id="Canvas" width="900" height="500"></canvas>
+   
+    <canvas id="CanvasM" width="300" height="500"></canvas>
+
+    <canvas id="CanvasT" width="300" height="500"></canvas>
+
+    <canvas id="CanvasN" width="300" height="500"></canvas>
+
+     <style>
+        #CanvasM, #CanvasT, #CanvasN {
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+    
     <script>
-        const canvas = document.getElementById("Canvas");
-        const ctx = canvas.getContext("2d");
+        const canvasM = document.getElementById("CanvasM");
+        const ctxM = canvasM.getContext("2d");
+
+        let cloudX1 = -100; // Posição inicial da primeira nuvem
+        let cloudX2 = -200; // Posição inicial da segunda nuvem
+        let cloudX3 = -150; // Posição inicial da terceira nuvem
+
+        function drawClouds() {
+
+        // Limpa o quadro da manhã
+        ctxM.clearRect(0, 0, canvasM.width, canvasM.height);
+
 
         // Manhã
-        ctx.fillStyle = "#87CEEB"; // Céu azul claro
-        ctx.fillRect(0, 0, canvas.width / 3, canvas.height);
+        ctxM.fillStyle = "#87CEEB"; // Céu azul claro
+        ctxM.fillRect(0, 0, canvasM.width, canvasM.height);
 
         // Sol
-        ctx.fillStyle = "#FFD700"; // Cor do sol
-        ctx.beginPath();
-        ctx.arc(55, 60, 50, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#FFD700"; // Cor do sol
+        ctxM.beginPath();
+        ctxM.arc(55, 60, 50, 0, Math.PI * 2);
+        ctxM.closePath();
+        ctxM.fill();
 
-        // Nuvens
-        drawCloud(250, 150);
-        drawCloud(10, 200);
-        drawCloud(50, 100);
+        // Move e desenha a primeira nuvem
+        cloudX1 += 1; // Mova a nuvem para a direita
+        if (cloudX1 > canvasM.width) {
+            cloudX1 = -100; // Reset da posição quando atinge o final
+        }
+        drawCloud(cloudX1, 150);
+
+        // Move e desenha a segunda nuvem
+        cloudX2 += 1; // Mova a nuvem para a direita
+        if (cloudX2 > canvasM.width) {
+            cloudX2 = -200; // Reset da posição quando atinge o final
+        }
+        drawCloud(cloudX2, 200);
+
+        // Move e desenha a terceira nuvem
+        cloudX3 += 1; // Mova a nuvem para a direita
+        if (cloudX3 > canvasM.width) {
+            cloudX3 = -150; // Reset da posição quando atinge o final
+        }
+        drawCloud(cloudX3, 100);
 
         // Colina final
-        ctx.fillStyle = "#165705"; 
-        ctx.beginPath();
-        ctx.moveTo(0, 700);
-        ctx.lineTo(50, 250);
-        ctx.lineTo(250, 600);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#165705"; 
+        ctxM.beginPath();
+        ctxM.moveTo(0, 700);
+        ctxM.lineTo(40, 250);
+        ctxM.lineTo(250, 600);
+        ctxM.closePath();
+        ctxM.fill();
 
-        ctx.fillStyle = "#0a2e01"; 
-        ctx.beginPath(); // colina5
-        ctx.moveTo(-100, 700);
-        ctx.lineTo(50, 250);
-        ctx.lineTo(100, 600);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#0a2e01"; 
+        ctxM.beginPath(); // colina5
+        ctxM.moveTo(-100, 700);
+        ctxM.lineTo(40, 250);
+        ctxM.lineTo(50, 600);
+        ctxM.closePath();
+        ctxM.fill();
 
-        ctx.fillStyle = "#034d17";
-        ctx.beginPath();  // Colina4
-        ctx.moveTo(50, 500);
-        ctx.lineTo(250, 350);
-        ctx.lineTo(400, 500);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#034d17";
+        ctxM.beginPath();  // Colina4
+        ctxM.moveTo(50, 500);
+        ctxM.lineTo(250, 350);
+        ctxM.lineTo(400, 500);
+        ctxM.closePath();
+        ctxM.fill();
 
+        ctxM.fillStyle = "#034f10"; //colina3
+        ctxM.beginPath();
+        ctxM.moveTo(0, 500);
+        ctxM.lineTo(150, 300);
+        ctxM.lineTo(300, 500);
+        ctxM.closePath();
+        ctxM.fill();
 
-        ctx.fillStyle = "#228B22"; //colina3
-        ctx.beginPath();
-        ctx.moveTo(0, 500);
-        ctx.lineTo(150, 300);
-        ctx.lineTo(300, 500);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#056e17";
+        ctxM.beginPath();  // Colina2
+        ctxM.moveTo(100, 500);
+        ctxM.lineTo(250, 350);
+        ctxM.lineTo(400, 500);
+        ctxM.closePath();
+        ctxM.fill();
 
-        ctx.fillStyle = "#228B22";
-        ctx.beginPath();  // Colina2
-        ctx.moveTo(100, 500);
-        ctx.lineTo(250, 350);
-        ctx.lineTo(400, 500);
-        ctx.closePath();
-        ctx.fill();
+        ctxM.fillStyle = "#048519"; 
+        ctxM.beginPath(); // Colina1
+        ctxM.moveTo(0, 700);
+        ctxM.lineTo(150, 300);
+        ctxM.lineTo(300, 500);
+        ctxM.closePath();
+        ctxM.fill();
 
-        ctx.fillStyle = "#165705"; 
-        ctx.beginPath(); // Colina1
-        ctx.moveTo(0, 700);
-        ctx.lineTo(150, 300);
-        ctx.lineTo(300, 500);
-        ctx.closePath();
-        ctx.fill();
-
-        function drawCloud(x, y) {
-            ctx.fillStyle = "#fff"; // Cor das nuvens
-            ctx.beginPath();
-            ctx.arc(x, y, 30, 0, Math.PI * 2);
-            ctx.arc(x + 40, y, 40, 0, Math.PI * 2);
-            ctx.arc(x + 80, y, 30, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
         }
+
+        // Função para desenhar uma nuvem
+        function drawCloud(x, y) {
+            ctxM.fillStyle = "#fff"; // Cor das nuvens
+            ctxM.beginPath();
+            ctxM.arc(x, y, 30, 0, Math.PI * 2);
+            ctxM.arc(x + 40, y, 40, 0, Math.PI * 2);
+            ctxM.arc(x + 80, y, 30, 0, Math.PI * 2);
+            ctxM.closePath();
+            ctxM.fill();
+        }
+        
+        drawClouds();
+
+        //função para redesenhar as nuvens a cada 16ms
+        setInterval(drawClouds, 16);
 
         // Tarde
-        ctx.fillStyle = "#FFA500"; // Céu alaranja
-        ctx.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
+        const canvasT = document.getElementById("CanvasT");
+        const ctxT = canvasT.getContext("2d");
+
+        //Ceu Tarde
+        ctxT.fillStyle = "#FFA500"; // Céu alaranja
+        ctxT.fillRect(0, 0, canvasT.width, canvasT.height);
+
+        // Sol tarde
+        ctxT.fillStyle = "#FFD700"; // Cor do sol
+        ctxT.beginPath();
+        ctxT.arc(canvasT.width / 2, canvasT.height / 2, 50, 0, Math.PI * 2);
+        ctxT.closePath();
+        ctxT.fill();
 
         // Pássaros
-        ctx.strokeStyle = "#000"; // Cor dos pássaros
+        ctxT.strokeStyle = "#000"; // Cor dos pássaros
         for (let i = 0; i < 5; i++) {
-        const x = (canvas.width / 3) + Math.random() * (canvas.width / 3);
-        const y = Math.random() * canvas.height / 2;
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.quadraticCurveTo(x + 10, y - -20, x + 15, y);
-        ctx.stroke();
+        const x = (canvasT.width / 3) + Math.random() * (canvasT.width / 3);
+        const y = Math.random() * canvasT.height / 2;
+        ctxT.beginPath();
+        ctxT.moveTo(x, y);
+        ctxT.quadraticCurveTo(x + 10, y - -20, x + 15, y);
+        ctxT.stroke();
         }
-        
-        // Sol Tarde
-        ctx.fillStyle = "#FFD700"; // Cor do sol
-        ctx.beginPath();
-        ctx.arc(520, 350, 50, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
 
-        // Noite
-        ctx.fillStyle = "#000"; // Céu noturno
-        ctx.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+        const canvasN = document.getElementById("CanvasN");
+        const ctxN = canvasN.getContext("2d");
 
-        // Estrelas
-        ctx.fillStyle = "#fff"; // Cor das estrelas
+        // Função para desenhar as estrelas
+        function drawStars() {
+        ctxN.clearRect(0, 0, canvasN.width, canvasN.height); // Limpa o canvas
+        ctxN.fillStyle = "#000"; // Céu noturno
+        ctxN.fillRect(0, 0, canvasN.width, canvasN.height);
+
+        ctxN.fillStyle = "#fff"; // Cor das estrelas
         for (let i = 0; i < 100; i++) {
-            const x = (canvas.width / 3) * 2 + Math.random() * (canvas.width / 3);
-            const y = Math.random() * canvas.height;
-            ctx.fillRect(x, y, 2, 2);
+            const x = Math.random() * canvasN.width;
+            const y = Math.random() * canvasN.height;
+            ctxN.fillRect(x, y, 2, 2);
         }
-        
-        // Lua
-        ctx.fillStyle = "#f5f5f5"; // Cor da lua
-        ctx.beginPath();
-        ctx.arc(800, 100, 50, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
 
-        // Montanhas
-        ctx.fillStyle = "#30302c"; // Cor das ultima montanha
-        ctx.beginPath();
-        ctx.moveTo(600, 500);
-        ctx.lineTo(700, 200);
-        ctx.lineTo(800, 400);
-        ctx.closePath();
-        ctx.fill();
+    // Lua
+    ctxN.fillStyle = "#cae7fc"; // Cor da Lua
+    ctxN.beginPath();
+    ctxN.arc(canvasN.width / 2, canvasN.height / 3, 60, 0, Math.PI * 2);
+    ctxN.closePath();
+    ctxN.fill()
 
-        ctx.fillStyle = "#787675"; // Cor das montanhas 5
-        ctx.beginPath();
-        ctx.moveTo(600, 700);
-        ctx.lineTo(700, 200);
-        ctx.lineTo(800, 400);
-        ctx.closePath();
-        ctx.fill();
+    // Montanhas
+    ctxN.fillStyle = "#4c4f4c"; // Cor das ultimas montanhas
+    ctxN.beginPath();
+    ctxN.moveTo(550, 600);
+    ctxN.lineTo(250, 100);
+    ctxN.lineTo(100, 350);
+    ctxN.closePath();
+    ctxN.fill();
 
-        ctx.fillStyle = "#4c4f4c"; // Cor das montanha 4
-        ctx.beginPath();
-        ctx.moveTo(600, 500);
-        ctx.lineTo(900, 300);
-        ctx.lineTo(800, 500);
-        ctx.closePath();
-        ctx.fill();
+    ctxN.fillStyle = "#8f8e8c"; // Cor das montanhas 5
+    ctxN.beginPath();
+    ctxN.moveTo(600, 700);
+    ctxN.lineTo(250, 100);
+    ctxN.lineTo(200, 600);
+    ctxN.closePath();
+    ctxN.fill();
 
-        ctx.fillStyle = "#4c4f4c"; // Cor das montanha 3
-        ctx.beginPath();
-        ctx.moveTo(600, 400);
-        ctx.lineTo(650, 300);
-        ctx.lineTo(950, 500);
-        ctx.closePath();
-        ctx.fill();
+    ctxN.fillStyle = "#787675"; // Cor das montanhas 4
+    ctxN.beginPath();
+    ctxN.moveTo(50, 500);
+    ctxN.lineTo(150, 200);
+    ctxN.lineTo(350, 500);
+    ctxN.closePath();
+    ctxN.fill();
 
-        ctx.fillStyle = "#656665"; // Cor das montanha 2
-        ctx.beginPath();
-        ctx.moveTo(600, 800);
-        ctx.lineTo(900, 300);
-        ctx.lineTo(900, 500);
-        ctx.closePath();
-        ctx.fill();
+    ctxN.fillStyle = "#30302c"; // Cor das montanhas 3
+    ctxN.beginPath();
+    ctxN.moveTo(50, 400);
+    ctxN.lineTo(150, 200);
+    ctxN.lineTo(250, 600);
+    ctxN.closePath();
+    ctxN.fill();
 
-         ctx.fillStyle = "#333634"; // Cor das montanha 1
-        ctx.beginPath();
-        ctx.moveTo(600, 400);
-        ctx.lineTo(650, 300);
-        ctx.lineTo(900, 500);
-        ctx.closePath();
-        ctx.fill();
+    ctxN.fillStyle = "#333634"; // Cor das montanhas 2
+    ctxN.beginPath();
+    ctxN.moveTo(-150, 800);
+    ctxN.lineTo(50, 300);
+    ctxN.lineTo(200, 500);
+    ctxN.closePath();
+    ctxN.fill();
 
-        // chao noturno
-        ctx.fillStyle = "#075410"; // Cor chao
-        ctx.beginPath();
-        ctx.moveTo((canvas.width / 3) * 2, canvas.height);
-        ctx.lineTo((canvas.width / 3) * 2, 400);
-        ctx.lineTo(canvas.width, canvas.height);
-        ctx.closePath();
-        ctx.fill();
-        
+    ctxN.fillStyle = "#656665"; // Cor das montanhas 1
+    ctxN.beginPath();
+    ctxN.moveTo(200,500);
+    ctxN.lineTo(50, 300);
+    ctxN.lineTo(200, 600);
+    ctxN.closePath();
+    ctxN.fill();
+
+    // chão noturno
+    //ctxN.fillStyle = "#075410"; // Cor do chão
+    // ctxN.beginPath();
+    // ctxN.moveTo((canvasN.width / 3) * 2, canvasN.height);
+    // ctxN.lineTo((canvas.width / 3) * 2, 400);
+    // ctxN.lineTo(canvasN.width, canvasN.height);
+    // ctxN.closePath();
+    // ctxN.fill();
+}
+
+
+drawStars();
+
+
+setInterval(drawStars, 3000); //  3 segundos
+
+
+
     </script>
 </body>
 </html>
+
 
