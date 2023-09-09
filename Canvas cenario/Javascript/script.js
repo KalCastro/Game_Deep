@@ -265,4 +265,4 @@ const canvasM = document.getElementById("CanvasM");
 
         drawStars();
 
-        setInterval(drawStars, 3000); //  3 segundos
+        setInterval(drawStars, 2000); //  3 segundos
