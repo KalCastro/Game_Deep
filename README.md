@@ -1,12 +1,11 @@
-<h1>Documentação do Diagrama de Classes para Jogo Unity: Deep</h1>
+<h1>Documentação dos Diagramas do Jogo Unity: Deep</h1>
 
 <body>
   
-<p>Este é um README que fornece uma visão geral do diagrama de classes para um jogo Unity de corrida com obstáculos. O diagrama de classes descreve a estrutura e as relações entre as principais entidades do jogo, como o jogador, o nível e os obstáculos. O jogo é uma corrida com obstaculos, há 3 niveis e 3 vidas para o jogador. A cada nível ficará mais fácil de passar pelos obstaculos, e caso o jogador encoste em um será retirado uma vida do jogador. O mapa é o mesmo para cada nível, o que muda é a velocidade dos obstáculos em cada nível.</p>
+<p>Este é um README que fornece uma visão geral dos diagramas para um jogo Unity de corrida com obstáculos. O diagrama de classes descreve a estrutura e as relações entre as principais entidades do jogo, como o jogador, o nível e os obstáculos. O jogo é uma corrida com obstaculos, há 3 niveis e 3 vidas para o jogador. A cada nível ficará mais fácil de passar pelos obstaculos, e caso o jogador encoste em um será retirado uma vida do jogador. O mapa é o mesmo para cada nível, o que muda é a velocidade dos obstáculos em cada nível. E o diagrama de casos de uso descreve as ações que serão realizadas pelo jogador durante sua presença no jogo.</p>
 
 <h2>Diagrama de Classes</h2>
 
-<img src="link-para-a-imagem-do-diagrama" alt="Diagrama de Classes">
 
 <h3>Classe <code>Jogo</code></h3>
 <p>A classe <code>Jogo</code> é responsável por gerenciar o estado global do jogo e controlar o progresso. Ela possui os seguintes atributos e métodos:</p>
@@ -68,13 +67,38 @@
     <li><code>movimentar</code>: Controla o movimento do obstáculo.</li>
     <li><code>checarColisao(jogador:Jogador)</code>:  Verifica colisões com o jogador.</li>
 </ul>
+
+<br><br>
+<h2>Diagrama de Casos de uso</h2>
+<p><strong>Nome do caso de uso: </strong>Jogo Deep;<br>
+   <strong>Caso de uso geral: </strong>Passar por obstáculos;<br>
+   <strong>Ator principal: </strong>Jogador;<br>
+   <strong>Resumo: </strong>O jogador tem como objetivo passar por obstáculos sem encostar em nenhum;<br>
+   <strong>Pré-condições: </strong>O jogador tem que passar pelos obstáculos sem perder todas suas vidas;<br>
+   <strong>Pré-condições: </strong>O jogador passa de nível;<br>
+   <strong>Ações do ator: </strong>Ações do jogo.<br>
+</p>
+
+<h2> Ações</h2>
+<ol>
+  <li>O jogador inicia o jogo;</li>
+  <li>O jogo identifica o nível a ser jogado pelo jogador;</li>
+  <li>Se o jogador encostar em um obstáculo, perde uma vida;</li>
+  <li>Passando pelos obstáculos, o jogador continua jogando até avançar para o próximo nível;</li>
+  <li>Se o jogador perder todas as vidas, tem a opção de jogar novamente;</li>
+  <li>Concluindo todos os níveis, o jogador tem a opção de jogar novamente.</li>
+</ol>
+<h3> Restrições</h3>
+<ol>
+  <li>Para perder o jogo, o jogador deve esgotar suas três vidas.</li>
+</ol>
+
+<h2>Ordem</h2>
+<h3>Ações do Jogador: </h3>
+<p>1,3,4</p>
+<h3>Ações do Jogo: </h3>
+<p>2,5,6</p>
 </body>
 
 
 
-
-https://assetstore.unity.com/packages/3d/vegetation/environment-pack-free-forest-sample-168396
-https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-animal-people-sample-204568
-https://assetstore.unity.com/packages/3d/environments/roof-top-safe-house-195991
-https://assetstore.unity.com/packages/3d/environments/free-open-building-112907
-https://assetstore.unity.com/packages/templates/packs/obstacle-course-pack-178169
