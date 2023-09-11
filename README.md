@@ -6,6 +6,7 @@
 
 <h2>Diagrama de Classes</h2>
 
+<img src="Diagramas/Diagrama de Classe Unity.drawio.svg" height="500px" width="600px">
 
 <h3>Classe <code>Jogo</code></h3>
 <p>A classe <code>Jogo</code> é responsável por gerenciar o estado global do jogo e controlar o progresso. Ela possui os seguintes atributos e métodos:</p>
@@ -70,6 +71,7 @@
 
 <br><br>
 <h2>Diagrama de Casos de uso</h2>
+<img src="Diagramas/Diagrama Casos de Uso.drawio.svg" height="500px" width="600px">
 <p><strong>Nome do caso de uso: </strong>Jogo Deep;<br>
    <strong>Caso de uso geral: </strong>Passar por obstáculos;<br>
    <strong>Ator principal: </strong>Jogador;<br>
