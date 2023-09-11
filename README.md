@@ -6,10 +6,10 @@
 
 <h2>Diagrama de Classes</h2>
 <h3>Diagrama de Classes Unity</h3>
-<img src="Diagramas/Diagrama de Classe Unity.drawio.svg" height="500px" width="600px" alt="Clique na imagem para ver melhor">
+<img src="Diagramas/imgs/unity.png.png" height="600px" width="830px" alt="Clique na imagem para ver melhor">
 <br>
 <h3>Diagrama de Classes Javascript</h3>
-<img src="Diagramas/Diagrama de Classe Javascript.drawio.svg" height="500px" width="600px"  alt="Clique na imagem para ver melhor">
+<img src="Diagramas/imgs/javascript.png.png" height="600px" width="830px"  alt="Clique na imagem para ver melhor">
 
 
 <h3>Classe <code>Jogo</code></h3>
@@ -75,7 +75,7 @@
 
 <br><br>
 <h2>Diagrama de Casos de uso</h2>
-<img src="Diagramas/Diagrama Casos de Uso.drawio.svg" height="500px" width="600px"  alt="Clique na imagem para ver melhor">
+<img src="Diagramas/imgs/uso.png.png" height="500px" width="600px"  alt="Clique na imagem para ver melhor">
 <p><strong>Nome do caso de uso: </strong>Jogo Deep;<br>
    <strong>Caso de uso geral: </strong>Passar por obstáculos;<br>
    <strong>Ator principal: </strong>Jogador;<br>
