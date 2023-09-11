@@ -5,8 +5,12 @@
 <p>Este é um README que fornece uma visão geral dos diagramas para um jogo Unity de corrida com obstáculos. O diagrama de classes descreve a estrutura e as relações entre as principais entidades do jogo, como o jogador, o nível e os obstáculos. O jogo é uma corrida com obstaculos, há 3 niveis e 3 vidas para o jogador. A cada nível ficará mais fácil de passar pelos obstaculos, e caso o jogador encoste em um será retirado uma vida do jogador. O mapa é o mesmo para cada nível, o que muda é a velocidade dos obstáculos em cada nível. E o diagrama de casos de uso descreve as ações que serão realizadas pelo jogador durante sua presença no jogo.</p>
 
 <h2>Diagrama de Classes</h2>
+<h3>Diagrama de Classes Unity</h3>
+<img src="Diagramas/Diagrama de Classe Unity.drawio.svg" height="500px" width="600px" alt="Clique na imagem para ver melhor">
+<br>
+<h3>Diagrama de Classes Javascript</h3>
+<img src="Diagramas/Diagrama de Classe Javascript.drawio.svg" height="500px" width="600px"  alt="Clique na imagem para ver melhor">
 
-<img src="Diagramas/Diagrama de Classe Unity.drawio.svg" height="500px" width="600px">
 
 <h3>Classe <code>Jogo</code></h3>
 <p>A classe <code>Jogo</code> é responsável por gerenciar o estado global do jogo e controlar o progresso. Ela possui os seguintes atributos e métodos:</p>
@@ -71,7 +75,7 @@
 
 <br><br>
 <h2>Diagrama de Casos de uso</h2>
-<img src="Diagramas/Diagrama Casos de Uso.drawio.svg" height="500px" width="600px">
+<img src="Diagramas/Diagrama Casos de Uso.drawio.svg" height="500px" width="600px"  alt="Clique na imagem para ver melhor">
 <p><strong>Nome do caso de uso: </strong>Jogo Deep;<br>
    <strong>Caso de uso geral: </strong>Passar por obstáculos;<br>
    <strong>Ator principal: </strong>Jogador;<br>
